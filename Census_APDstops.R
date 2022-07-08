@@ -62,9 +62,7 @@ APD_Racial_Profiling_2020 <- select(APD_Racial_Profiling_2020,
 #write.csv(APD_Racial_Profiling_2020, "C:/[*PATH*]/APD_Racial_Profiling_2020
 #          .csv", row.names = FALSE)
 
-#write.csv(car_commuters, "C:/Users/msam9/OneDrive - The University of Texas at 
-Austin/Documents/_Summer 2022/Independent Study with Karner/Policing 
-and Race in Austin/Data/vehicles_commuting.csv")
+#write.csv(car_commuters, "C:/[*PATH*]/vehicles_commuting.csv")
 
 
 
@@ -103,11 +101,11 @@ wb <- createWorkbook(creator = Sys.getenv("USERNAME"))
 addWorksheet(wb, "Data")
 pt$writeToExcelWorksheet(wb=wb, wsName="Data", 
                          topRowNumber=1, leftMostColumnNumber=1, applyStyles=FALSE)
-saveWorkbook(wb, file="C:/Users/msam9/OneDrive - The University of Texas at Austin/Documents/_Summer 2022/Independent Study with Karner/Policing and Race in Austin/Data/Stops_Race_GEOID.xlsx", overwrite = TRUE)
+saveWorkbook(wb, file="C:/[*PATH*]/Stops_Race_GEOID.xlsx", overwrite = TRUE)
 
 #Stop to Station Distance Analysis
 
-Stop2station <- read.csv("C:/Users/msam9/OneDrive - The University of Texas at Austin/Documents/_Summer 2022/Independent Study with Karner/Policing and Race in Austin/Data/Stop to Station Near.csv", header = TRUE)
+Stop2station <- read.csv("C:/[*PATH*]/Stop to Station Near.csv", header = TRUE)
 
 Stop2station_summary <- Stop2station %>%
   group_by(NEAR_FID) %>%
@@ -116,7 +114,7 @@ Stop2station_summary <- Stop2station %>%
     avg_dist = mean(NEAR_DIST, na.rm = TRUE)
   )
 
-#write.csv(Stop2station_summary, "C:/Users/msam9/OneDrive - The University of Texas at Austin/Documents/_Summer 2022/Independent Study with Karner/Policing and Race in Austin/Data/Stops2Stations_summary.csv")
+#write.csv(Stop2station_summary, "C:/[*PATH*]/Stops2Stations_summary.csv")
 
 #Stop Results by Race by Tract
 
